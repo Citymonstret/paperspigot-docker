@@ -46,7 +46,7 @@ RUN mv ${MINECRAFT_BUILD_PATH}/cache/patched*.jar ${MINECRAFT_BUILD_PATH}/paper.
 ###########################
 ### Running environment ###
 ###########################
-FROM openjdk:${JAVA_VERSION} AS runtime
+FROM adoptopenjdk/openjdk9-openj9:latest AS runtime
 
 ##########################
 ### Environment & ARGS ###
