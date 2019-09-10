@@ -1,10 +1,7 @@
-# Java Version
-ARG JAVA_VERSION=11
-
 ################################
-### We use a java base image ###
+### We use openj9 base image ###
 ################################
-FROM openjdk:${JAVA_VERSION} AS build
+FROM adoptopenjdk/openjdk9-openj9:latest AS build
 
 #####################################
 ### Maintained by Felix Klauke    ###
