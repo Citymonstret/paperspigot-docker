@@ -65,20 +65,6 @@ ENV JAVA_ARGS="-server -Dcom.mojang.eula.agree=true"
 ENV SPIGOT_ARGS="--nojline"
 ENV PAPER_ARGS=""
 
-#################
-### Libraries ###
-#################
-ADD https://bootstrap.pypa.io/get-pip.py .
-RUN python get-pip.py
-
-RUN pip install mcstatus
-
-###################
-### Healthcheck ###
-###################
-HEALTHCHECK --interval=10s --timeout=5s \
-    CMD mcstatus localhost:$( cat $PROPERTIES_LOCATION | grep "server-port" | cut -d'=' -f2 ) ping
-
 #########################
 ### Working directory ###
 #########################
