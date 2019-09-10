@@ -38,9 +38,11 @@ USER ${MINECRAFT_BUILD_USER}
 ############################################
 ### Run paperclip and obtain patched jar ###
 ############################################
+RUN echo "Building ${MINECRAFT_BUILD_PATH}/paper.jar!"
 RUN java -jar ${MINECRAFT_BUILD_PATH}/paper.jar; exit 0
 
 # Copy built jar
+RUN echo "Saving ${MINECRAFT_BUILD_PATH}/paper.jar!"
 RUN mv ${MINECRAFT_BUILD_PATH}/cache/patched*.jar ${MINECRAFT_BUILD_PATH}/paper.jar
 
 ###########################
